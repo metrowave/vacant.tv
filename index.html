@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Competitions</title>
+</head>
+<body>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<div id="chart_div"></div>
+	<div id="chart2_div"></div>
+<script type="text/javascript">   google.charts.load('current', {
+        'packages': ['gantt']
+      });
+      google.charts.setOnLoadCallback(drawChart);
+	google.charts.setOnLoadCallback(drawChart2);
+
+      function drawChart() {
+
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Task ID');
+        data.addColumn('string', 'Task Name');
+        data.addColumn('string', 'Resource');
+        data.addColumn('date', 'Start Date');
+        data.addColumn('date', 'End Date');
+        data.addColumn('number', 'Duration');
+        data.addColumn('number', 'Percent Complete');
+        data.addColumn('string', 'Dependencies');
+
+        data.addRows([
+          ['Pidgin', 'PIDGIN', 'paper',
+            new Date(2018, 2, 29), new Date(2018, 3, 31), null, 0, null
+          ],
+          ['home', 'HOME', 'arch',
+            new Date(2018, 5, 4), new Date(2018, 7, 1), null, 0, null
+		  ],
+		  ['museum', 'Museums alternate', 'arch',
+            new Date(2018, 5, 1), new Date(2018, 7, 31), null, 0, null
+          ],
+          ['surfaces', 'Surfeces', 'design',
+            new Date(2018, 2, 29), new Date(2018, 3, 15), null, 0, null
+          ],
+          ['lund', 'Lund', 'film',
+            new Date(2018, 4, 30), new Date(2018, 6, 30), null, 0, null
+		   ],
+          ['Palmspring', 'Palmspring', 'film',
+            new Date(2018, 6, 14), new Date(2018, 8, 1), null, 0, null
+          ],
+          ['londonBench', 'london bench', 'furniture',
+            new Date(2018, 2, 29), new Date(2018, 3, 19), null, 0, null
+          ],
+          ['Beachwood furn', 'Beachwood furn', 'furniture',
+            new Date(2018, 4, 21), new Date(2018, 10, 30), null, 0, null
+          ],
+          ['a+dff', 'a+dff', 'film',
+            new Date(2018, 3, 2), new Date(2018, 6, 2), null, 0, null
+          ],
+		  ['aktualnosci', 'aktualnosci projection', 'light',
+            new Date(2018, 2, 29), new Date(2018, 3, 30), null, 0, null
+          ],
+          ['AI', 'AI House', 'arch',
+            new Date(2018, 2, 29), new Date(2018, 4, 9), null, 0, null
+          ],
+		  ['Baghdad', 'Baghdad', 'arch',
+            new Date(2018, 5, 5), new Date(2018, 8, 9), null, 0, null
+          ],
+          ['RSAIran', 'RSA Iran', 'arch',
+            new Date(2018, 2, 29), new Date(2018, 4, 21), null, 0, null
+          ],
+		  ['phosphorous', 'phosphorous', 'light',
+            new Date(2018, 4, 1), new Date(2018, 4, 31), null, 0, null
+          ],
+          ['3DPrinting', '3D Printing grant', 'design',
+            new Date(2018, 2, 29), new Date(2018, 5, 30), null, 0, null
+          ],
+		  ['unreal', 'Unreal grant', 'design',
+            new Date(2018, 2, 29), new Date(2018, 10, 30), null, 0, null
+          ],
+		
+        ]);
+		  
+        var options = {
+          height: 600,
+          gantt: {
+            trackHeight: 29
+          }
+        };
+
+        var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+	
+      }
+	function toMilliseconds(minutes) {
+      return minutes * 60 * 1000;
+    }
+	
+	function drawChart2() {
+
+        var data2 = new google.visualization.DataTable();
+        data2.addColumn('string', 'Task ID');
+        data2.addColumn('string', 'Task Name');
+        data2.addColumn('string', 'Resource');
+        data2.addColumn('date', 'Start Date');
+        data2.addColumn('date', 'End Date');
+        data2.addColumn('number', 'Duration');
+        data2.addColumn('number', 'Percent Complete');
+        data2.addColumn('string', 'Dependencies');
+
+        data2.addRows([
+        ['toTrain', 'Walk to train stop', 'walk', null, null, toMilliseconds(50), 100, null],
+        ['music', 'Listen to music', 'music', null, null, toMilliseconds(170), 100, null],
+        ['wait', 'Wait for train', 'wait', null, null, toMilliseconds(50), 100, 'toTrain'],
+        ['train', 'Train ride', 'train', null, null, toMilliseconds(75), 75, 'wait'],
+        ['toWork', 'Walk to work', 'walk', null, null, toMilliseconds(90), 0, 'train'],
+        ['work', 'Sit down at desk', null, null, null, toMilliseconds(20), 0, 'toWork'],
+
+      ]);		  
+
+        var options = {
+        height: 275,
+        gantt: {
+        	defaultStartDateMillis: new Date(2018, 2, 28),
+			trackHeight: 25,
+			criticalPathEnabled: true,
+			shadowEnabled: true,
+			shadowOffset: 2,
+          	innerGridHorizLine: {
+            stroke: '#f0fff0',
+            strokeWidth: 3
+          },
+          innerGridTrack: {fill: '#fcccc1'},
+          innerGridDarkTrack: {fill: '#cccce1'}
+		}
+
+      };
+
+
+        var chart2 = new google.visualization.Gantt(document.getElementById('chart2_div'));
+
+        chart2.draw(data2, options);
+	
+      }
+</script>
+</body>
+</html>
