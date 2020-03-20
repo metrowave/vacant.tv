@@ -1,145 +1,95 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en" >
+
 <head>
-<meta charset="utf-8">
-<title>Competitions</title>
+  <meta charset="UTF-8">
+  <title>Isometric CSS Grid experiment in three planes</title>
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:200,300,400" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.min.css">
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
 </head>
+
 <body>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<div id="chart_div"></div>
-	<div id="chart2_div"></div>
-<script type="text/javascript">   google.charts.load('current', {
-        'packages': ['gantt']
-      });
-      google.charts.setOnLoadCallback(drawChart);
-	google.charts.setOnLoadCallback(drawChart2);
-
-      function drawChart() {
-
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Task ID');
-        data.addColumn('string', 'Task Name');
-        data.addColumn('string', 'Resource');
-        data.addColumn('date', 'Start Date');
-        data.addColumn('date', 'End Date');
-        data.addColumn('number', 'Duration');
-        data.addColumn('number', 'Percent Complete');
-        data.addColumn('string', 'Dependencies');
-
-        data.addRows([
-          ['Pidgin', 'PIDGIN', 'paper',
-            new Date(2018, 2, 29), new Date(2018, 3, 31), null, 0, null
-          ],
-          ['home', 'HOME', 'arch',
-            new Date(2018, 5, 4), new Date(2018, 7, 1), null, 0, null
-		  ],
-		  ['museum', 'Museums alternate', 'arch',
-            new Date(2018, 5, 1), new Date(2018, 7, 31), null, 0, null
-          ],
-          ['surfaces', 'Surfeces', 'design',
-            new Date(2018, 2, 29), new Date(2018, 3, 15), null, 0, null
-          ],
-          ['lund', 'Lund', 'film',
-            new Date(2018, 4, 30), new Date(2018, 6, 30), null, 0, null
-		   ],
-          ['Palmspring', 'Palmspring', 'film',
-            new Date(2018, 6, 14), new Date(2018, 8, 1), null, 0, null
-          ],
-          ['londonBench', 'london bench', 'furniture',
-            new Date(2018, 2, 29), new Date(2018, 3, 19), null, 0, null
-          ],
-          ['Beachwood furn', 'Beachwood furn', 'furniture',
-            new Date(2018, 4, 21), new Date(2018, 10, 30), null, 0, null
-          ],
-          ['a+dff', 'a+dff', 'film',
-            new Date(2018, 3, 2), new Date(2018, 6, 2), null, 0, null
-          ],
-		  ['aktualnosci', 'aktualnosci projection', 'light',
-            new Date(2018, 2, 29), new Date(2018, 3, 30), null, 0, null
-          ],
-          ['AI', 'AI House', 'arch',
-            new Date(2018, 2, 29), new Date(2018, 4, 9), null, 0, null
-          ],
-		  ['Baghdad', 'Baghdad', 'arch',
-            new Date(2018, 5, 5), new Date(2018, 8, 9), null, 0, null
-          ],
-          ['RSAIran', 'RSA Iran', 'arch',
-            new Date(2018, 2, 29), new Date(2018, 4, 21), null, 0, null
-          ],
-		  ['phosphorous', 'phosphorous', 'light',
-            new Date(2018, 4, 1), new Date(2018, 4, 31), null, 0, null
-          ],
-          ['3DPrinting', '3D Printing grant', 'design',
-            new Date(2018, 2, 29), new Date(2018, 5, 30), null, 0, null
-          ],
-		  ['unreal', 'Unreal grant', 'design',
-            new Date(2018, 2, 29), new Date(2018, 10, 30), null, 0, null
-          ],
-		
-        ]);
-		  
-        var options = {
-          height: 600,
-          gantt: {
-            trackHeight: 29
-          }
-        };
-
-        var chart = new google.visualization.Gantt(document.getElementById('chart_div'));
-
-        chart.draw(data, options);
+<!--/*<video autoplay muted loop id="myVideo">
+  <source src="media/line.mp4" type="video/mp4">
+</video>
 	
-      }
-	function toMilliseconds(minutes) {
-      return minutes * 60 * 1000;
-    }
-	
-	function drawChart2() {
+<div class="content">*/-->
+  
+  <!-- Use a button to pause/play the video with JavaScript -->
 
-        var data2 = new google.visualization.DataTable();
-        data2.addColumn('string', 'Task ID');
-        data2.addColumn('string', 'Task Name');
-        data2.addColumn('string', 'Resource');
-        data2.addColumn('date', 'Start Date');
-        data2.addColumn('date', 'End Date');
-        data2.addColumn('number', 'Duration');
-        data2.addColumn('number', 'Percent Complete');
-        data2.addColumn('string', 'Dependencies');
+  <!-- 
+For CSS Grid expertise:
+Rachel Andrew: https://gridbyexample.com/
+Jen Simmons: http://labs.jensimmons.com/
+ --><div align="center">
+<div id="holder">
+  <div id="grid3" class="grid">
+    <div><img src="media/chrono2010.png"></div>
+    <div><img src="media/ChinaModel1.4.4K.png"></div>
+    <div><img src="media/endless-hair.png"></div>
+    <div><img src="media/Man-09.png"></div>
+    <div><img src="media/vvvv2.png"></div>
+    <div><img src="media/assi2.png"></div>
+    <div><img src="media/archigesture.png"></div>
+    <div><img src="media/battersea.png"></div>
+	<div><img src="media/popup_vvvv.png"></div>
+    <div><img src="media/p_mapping.png"></div>
+    <div><img src="media/shrinkwrap.png"></div>
+	<div><img src="media/perspective.png"></div>
+    
+  </div>
+  <div id="grid2" class="grid">
+    <div><p>Video</p></div>
+    <div><p>Cinematic Architecture</p></div>
+    <div><p>Mapping</p></div>
+    <div><p>Projection</p></div>
+    <div><p>CAD<br>3D</p></div>
+    <div><p>Visualisation</p></div>
+    <div><p>Point Cloud</p></div>
+    <div><p>Photogrammetry</p></div>
+    <div><p>Chronophotography</p></div>
+    <div><p>Auto-Poesies</p></div>
+    <div><p>Gesture</p></div>
+    <div><p>VVVV</p></div>
+    <div><p>Archigeture</p></div>
+    <div><p>Research</p></div>
+    <div><p>Theory</p></div>
+    <div><p>Design</p></div>
+    <div><p>Parametric figuration</p></div>
+    <div><p>Generative geometry</p></div>
+    <div><p>Prototype</p></div>
+    <div><p>Fabrication</p></div>
+  </div>
+  <div id="grid1" class="grid">
+    <div><h1 style="font-size: 5.5vw">vacant.tv</h1><h2 style="font-size: 3.6vw">experimental projects in multi-dimensions</h2></div>
+    <div><p>Publication</p></div>
+    <div><p><a href="https://17.nodeforum.org/events/paper-pop-up-projection/" title="NODE17" target="_blank">Paper Pop-up Projection,</a> Node17 Workshop, Frankfurt</p></div>
+    <div><p>One one eight seven at Hunterwasser...</p></div>
+    <div><p>Space</p></div>
+    <div><p>Nice place?</p></div>
+    <div><p>Warming you up, that's all.</p></div>
+    <div><p>You're in a desert, walking along in the sand when...</p></div>
+    <div><p>Yes. You're in a desert, walking along in the sand when all of a sudden you look down and see a...</p></div>
+    <div><p>Body</p></div>
+    <div><p>Doesn't make any difference what desert... its completely hypothetical.</p></div>
+    <div><p>Maybe you're fed up, maybe you want to be by yourself...who knows. So you look down and see a tortoise. It's crawling toward you...</p></div>
+    <div><p>Know what a turtle is?</p></div>
+    <div><p>Same thing.</p></div>
+    <div><p>You reach down and flip the tortoise over on its back, Leon.</p></div>
+    <div><p>The tortoise lays on its back, its belly baking in the hot sun, beating its legs trying to turn itself over. But it can't. Not with out your help. But you're not helping.</p></div>
+    <div><p>I mean you're not helping! Why is that, Leon?</p></div>
+    <div><p>They're just questions, Leon. In answer to your query, they're written down for me. It's a test designed to provoke an emotional response.</p></div>
+    <div><p>Shall we continue?</p></div>
+    <div><p>Web design adapted from great work of Andy Barefoot, UK</p></div>
+  </div>
 
-        data2.addRows([
-        ['toTrain', 'Walk to train stop', 'walk', null, null, toMilliseconds(50), 100, null],
-        ['music', 'Listen to music', 'music', null, null, toMilliseconds(170), 100, null],
-        ['wait', 'Wait for train', 'wait', null, null, toMilliseconds(50), 100, 'toTrain'],
-        ['train', 'Train ride', 'train', null, null, toMilliseconds(75), 75, 'wait'],
-        ['toWork', 'Walk to work', 'walk', null, null, toMilliseconds(90), 0, 'train'],
-        ['work', 'Sit down at desk', null, null, null, toMilliseconds(20), 0, 'toWork'],
 
-      ]);		  
-
-        var options = {
-        height: 275,
-        gantt: {
-        	defaultStartDateMillis: new Date(2018, 2, 28),
-			trackHeight: 25,
-			criticalPathEnabled: true,
-			shadowEnabled: true,
-			shadowOffset: 2,
-          	innerGridHorizLine: {
-            stroke: '#f0fff0',
-            strokeWidth: 3
-          },
-          innerGridTrack: {fill: '#fcccc1'},
-          innerGridDarkTrack: {fill: '#cccce1'}
-		}
-
-      };
-
-
-        var chart2 = new google.visualization.Gantt(document.getElementById('chart2_div'));
-
-        chart2.draw(data2, options);
-	
-      }
-</script>
+</div>
+	</div>
 </body>
+
 </html>
